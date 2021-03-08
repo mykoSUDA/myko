@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta charset="UTF-8">
+<title>クマチャンARテスト</title>
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+	<style type="text/css">
+		@media (max-width: 768px) {
+			#QR-cont{
+				display: none;
+			}
+			#AR-wrap h5{
+				font-size: 0.8em;
+				font-style: normal;
+				color: #6a3906;
+			}
+			.ARarea {
+				float: left;
+				width: 100%;
+				height: 300px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			model-viewer {
+				position: relative;
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+			}
+			button {
+				position: absolute;
+				width: 150px;
+				height: 150px;
+				border: none;
+				background: none;
+				opacity: 0.5;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+			}		
+		}
+
+		@media (min-width: 769px) {
+			#QR-cont{
+				float: left;
+				text-align: center;
+			}
+			#AR-wrap h5{
+				font-size: 0.8em;
+				font-style: normal;
+				color: #6a3906;
+			}
+			#QR img{
+				width: 150px;
+				height: 150px;
+			}
+			.ARarea {
+				float: left;
+				width: 600px;
+				height: 600px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			model-viewer {
+				position: relative;
+				width: 600px;
+				height: 600px;
+			}
+			button {
+				position: absolute;
+				width: 150px;
+				height: 150px;
+				border: none;
+				background: none;
+				opacity: 0.5;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+	<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+		<div id="QR-cont">
+			<h5 class="PC">QRコードをスマートフォンで読み込んでください。</h5>
+			<div id="QR" class="PC"><img src="beartestQR.png" alt="QRコード"></div>
+		</div>
+		<div class="ARarea">
+			<model-viewer
+				alt="クマチャンテスト"
+				src="bear_rebone.glb" 
+				ios-src="bear_rebone.usdz"
+
+				background-color="#e1e8f6"
+				shadow-intensity="0.7"
+				camera-controls
+				interaction-prompt="auto"
+				auto-rotate ar magic-leap>
+				<button  slot="ar-button">
+					<svg viewBox="-16, -16, 100, 100">
+						<path d="M0 16 L32 32 L64 16 L32 0 Z" style="fill:#ffffff;stroke:black;stroke-linejoin:round;stroke-width:3;"/>
+						<path d="M32 32 L32 68 L64 52 L64 16 Z" style="fill:#c0c0c0;stroke:black;stroke-linejoin:round;stroke-width:3;"/>
+						<path d="M32 32 L32 68 L0 52 L0 16 Z" style="fill:#d3d3d3;stroke:black;stroke-linejoin:round;stroke-width:3;"/>
+					</svg>
+				</button>
+			</model-viewer>
+		</div>
+</body>
+</html>
